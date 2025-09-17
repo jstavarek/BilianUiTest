@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+	<TargetFramework>net9.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Configurations>Debug;Release;R-Installer;R-App;R-LicenseEncoder</Configurations>
+    <BaseOutputPath></BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Quantities\**" />
+    <EmbeddedResource Remove="Quantities\**" />
+    <None Remove="Quantities\**" />
+    <Page Remove="Quantities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bilian.Ui" Version="1.19.0" />
+    <PackageReference Include="Bilian.Ui.Wpf" Version="1.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BilianUiTest\BilianUiTest.csproj" />
+  </ItemGroup>
+
+</Project>

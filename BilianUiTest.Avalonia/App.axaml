@@ -1,0 +1,12 @@
+<bv:MvvmApplication x:Class="BilianUiTest.Avalonia.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bv="clr-namespace:Bilian.Ui.Avalonia;assembly=Bilian.Ui.Avalonia"
+    RequestedThemeVariant="Default">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        <FluentTheme />
+		<StyleInclude Source="/TestControl/TestControl.axaml"/>
+    </Application.Styles>
+</bv:MvvmApplication>

@@ -1,0 +1,5 @@
+﻿<bv:MvvmApplication x:Class="BilianUiTest.Wpf.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf">
+</bv:MvvmApplication>

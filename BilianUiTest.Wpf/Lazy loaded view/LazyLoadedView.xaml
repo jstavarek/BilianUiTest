@@ -1,0 +1,12 @@
+﻿<bv:UserControlViewWithModel x:Class="BilianUiTest.Wpf.LazyLoadedView" x:TypeArguments="bUiTest:LazyLoadedViewModel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf"
+        xmlns:bUiTest="clr-namespace:BilianUiTest;assembly=BilianUiTest"
+        xmlns:local="clr-namespace:BilianUiTest.Wpf"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance local:LazyLoadedView, d:IsDesignTimeCreatable=False}">
+
+    <Label Content="Lazy loaded view" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+</bv:UserControlViewWithModel>
