@@ -2,7 +2,7 @@
 
 public class CustomAction : IUiAction
 {
-    public void Execute(Action<IUserInteraction> doUserInteraction)
+    public void Execute(DoUserInteraction doUserInteraction)
     {
         doUserInteraction.ShowInformation("Text", "Title", null);
     }
