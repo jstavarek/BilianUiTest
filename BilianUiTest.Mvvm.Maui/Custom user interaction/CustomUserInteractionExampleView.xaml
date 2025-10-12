@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bv:ContentViewViewWithModel x:Class="BilianUiTest.Mvvm.Maui.CustomUserInteractionExampleView" x:TypeArguments="bUiTest:CustomUserInteractionExampleViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:bv="clr-namespace:Bilian.Ui.Maui;assembly=Bilian.Ui.Maui"
+    xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
+    xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui">
+
+    <StackLayout>
+        <Button Text="Go crazy" Command="{Binding Path=Model.GoCrazyCommand}" Margin="0,0,0,50"/>
+        <Border Background="{Binding Path=PanelBackground}" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="200" HeightRequest="200" StrokeThickness="0"/>
+    </StackLayout>
+</bv:ContentViewViewWithModel>

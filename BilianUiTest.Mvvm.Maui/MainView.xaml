@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bv:ContentPageViewWithModel x:Class="BilianUiTest.Mvvm.Maui.MainView" x:TypeArguments="bUiTest:MainViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:umat="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:bv="clr-namespace:Bilian.Ui.Maui;assembly=Bilian.Ui.Maui"
+    xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
+    xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui"
+    Title="Bilian UI MAUI MVVM examples"
+    x:Name="thisView">
+
+    <umat:TabView>
+        <umat:TabItem Title="User controls">
+            <local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, Source={x:Reference Name=thisView}}" Margin="30,30,0,0"/>
+        </umat:TabItem>
+
+        <umat:TabItem Title="Windows">
+            <StackLayout Orientation="Horizontal" Margin="30,30,0,0">
+                <Button Text="Form window" Command="{Binding Path=Model.OpenDialogCommand}"/>
+                <Button Text="Form dialog" Command="{Binding Path=Model.OpenModalDialogCommand}" Margin="20,0,0,0"/>
+            </StackLayout>
+        </umat:TabItem>
+
+        <umat:TabItem Title="Advanced">
+            <StackLayout Orientation="Horizontal" Margin="30,30,0,0" VerticalOptions="Start">
+                <Button Text="Message" Command="{Binding Path=Model.ShowMessageCommand}"/>
+                <Button Text="Error" Command="{Binding Path=Model.InvokeExceptionCommand}" Margin="20,0,0,0"/>
+                <Button Text="Query" Command="{Binding Path=Model.QueryUserCommand}" Margin="20,0,0,0"/>
+                <Button Text="Pick file" Command="{Binding Path=Model.PickFileCommand}" Margin="20,0,0,0"/>
+                <Button Text="Set file name file" Command="{Binding Path=Model.SetFileNameCommand}" Margin="20,0,0,0"/>
+                <Button Text="Pick folder" Command="{Binding Path=Model.PickFolderCommand}" Margin="20,0,0,0"/>
+            </StackLayout>
+        </umat:TabItem>
+
+        <umat:TabItem Title="Items">
+            <local:ItemsView Model="{Binding Path=Model.ItemsViewModel, Source={x:Reference Name=thisView}}" Margin="30,30,0,0"/>
+        </umat:TabItem>
+
+        <umat:TabItem Title="Custom user interactions">
+            <local:CustomUserInteractionExampleView Model="{Binding Path=Model.CustomUserInteractionExampleViewModel, Source={x:Reference Name=thisView}}" Margin="30,30,0,0"/>
+        </umat:TabItem>
+
+        <umat:TabItem Title="ViewLoader">
+            <bv:ViewLoader GetViewModel="{Binding Path=Model.GetLazyLoadedViewModel}" Margin="30,30,0,0"/>
+        </umat:TabItem>
+
+        <umat:TabItem Title="UI actions">
+            <Button Text="Action" Command="{Binding Path=Model.DoActionCommand}" Margin="30,30,0,0"/>
+        </umat:TabItem>
+    </umat:TabView>
+</bv:ContentPageViewWithModel>

@@ -1,0 +1,16 @@
+<bv:UserControlViewWithModel x:Class="BilianUiTest.Mvvm.Avalonia.CustomUserInteractionExampleView" x:TypeArguments="bUiTest:CustomUserInteractionExampleViewModel"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:bv="clr-namespace:Bilian.Ui.Avalonia;assembly=Bilian.Ui.Avalonia"
+	xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
+	xmlns:local="clr-namespace:BilianUiTest.Mvvm.Avalonia"
+	mc:Ignorable="d" x:DataType="local:CustomUserInteractionExampleView">
+
+	<StackPanel>
+		<Button Content="Go crazy" Command="{Binding Path=Model.GoCrazyCommand}" Margin="0,0,0,50"/>
+		<Border Background="{Binding Path=PanelBackground}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200"/>
+	</StackPanel>
+
+</bv:UserControlViewWithModel>
