@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class CustomUserInteractionExampleViewModel : AdvancedViewModel
+public class CustomUserInteractionExampleViewModel : ExtendedViewModel
 {
     public Command GoCrazyCommand { get; }
 

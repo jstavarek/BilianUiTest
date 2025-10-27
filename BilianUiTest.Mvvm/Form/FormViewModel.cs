@@ -2,7 +2,7 @@
 
 namespace BilianUiTest.Mvvm;
 
-public class FormViewModel : AdvancedViewModel
+public class FormViewModel : ExtendedViewModel
 {
     private string? text;
     public string? Text
@@ -26,15 +26,15 @@ public class FormViewModel : AdvancedViewModel
         ConfirmCommand = new Command(() => ShowInformation($"You entered \"{Text}\"", "Confirmation", null), () => string.IsNullOrEmpty(Text) == false);
     }
 
-    public override void OnViewActivated()
+    public override void OnViewAppeared()
     {
-        base.OnViewActivated();
+        base.OnViewAppeared();
         Debug.WriteLine($"OnViewActivated {GetType().Name}");
     }
 
-    public override void OnViewDeactivated()
+    public override void OnViewDisappeared()
     {
-        base.OnViewDeactivated();
+        base.OnViewDisappeared();
         Debug.WriteLine($"OnViewDeactivated {GetType().Name}");
     }
 }

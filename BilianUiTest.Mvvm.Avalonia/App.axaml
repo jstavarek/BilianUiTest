@@ -1,4 +1,4 @@
-<bv:UiAbstrationApplication x:Class="BilianUiTest.Mvvm.Avalonia.App"
+<bv:UiAbstractionApplication x:Class="BilianUiTest.Mvvm.Avalonia.App"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:bv="clr-namespace:Bilian.Ui.Avalonia;assembly=Bilian.Ui.Avalonia"
@@ -9,4 +9,4 @@
 		<FluentTheme />
 		<StyleInclude Source="/TestControl/TestControl.axaml"/>
 	</Application.Styles>
-</bv:UiAbstrationApplication>
+</bv:UiAbstractionApplication>

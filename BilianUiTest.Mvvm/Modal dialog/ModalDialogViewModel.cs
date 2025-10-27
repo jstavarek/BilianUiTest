@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class ModalDialogViewModel : AdvancedViewModel
+public class ModalDialogViewModel : ExtendedViewModel
 {
     private string? text;
     public string? Text
@@ -39,9 +39,9 @@ public class ModalDialogViewModel : AdvancedViewModel
             });
     }
 
-    public override void OnViewDeactivated()
+    public override void OnViewDisappeared()
     {
-        base.OnViewDeactivated();
+        base.OnViewDisappeared();
         if (textHasBeenConfirmed)
             onTextEnteredAction?.Invoke(Text!);
     }

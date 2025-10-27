@@ -3,7 +3,7 @@ using Avalonia.Markup.Xaml;
 
 namespace BilianUiTest.Mvvm.Avalonia;
 
-public partial class App : UiAbstrationApplication
+public partial class App : UiAbstractionApplication
 {
     public override void Initialize()
     {

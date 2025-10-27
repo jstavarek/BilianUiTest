@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class DialogViewModel : AdvancedViewModel
+public class DialogViewModel : ExtendedViewModel
 {
     private string? text;
     public string? Text

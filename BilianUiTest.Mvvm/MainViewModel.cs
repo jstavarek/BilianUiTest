@@ -2,7 +2,7 @@
 
 namespace BilianUiTest.Mvvm;
 
-public class MainViewModel : AdvancedViewModel
+public class MainViewModel : ExtendedViewModel
 {
     public Command OpenDialogCommand { get; }
     public Command OpenModalDialogCommand { get; }
@@ -115,15 +115,15 @@ public class MainViewModel : AdvancedViewModel
         customAction.Execute(userInteractionsInvoker);
     }
 
-    public override void OnViewActivated()
+    public override void OnViewAppeared()
     {
-        base.OnViewActivated();
+        base.OnViewAppeared();
         Debug.WriteLine($"OnViewActivated {GetType().Name}");
     }
 
-    public override void OnViewDeactivated()
+    public override void OnViewDisappeared()
     {
-        base.OnViewDeactivated();
+        base.OnViewDisappeared();
         Debug.WriteLine($"OnViewDeactivated {GetType().Name}");
     }
 }

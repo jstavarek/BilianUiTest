@@ -1,5 +1,5 @@
 ﻿<?xml version = "1.0" encoding = "UTF-8" ?>
-<bv:UiAbstrationApplication x:Class="BilianUiTest.Mvvm.Maui.App"
+<bv:UiAbstractionApplication x:Class="BilianUiTest.Mvvm.Maui.App"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:umat="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
@@ -22,4 +22,4 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
-</bv:UiAbstrationApplication>
+</bv:UiAbstractionApplication>

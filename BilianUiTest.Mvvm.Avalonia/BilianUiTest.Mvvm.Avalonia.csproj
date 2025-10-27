@@ -8,14 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.7" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.7" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.7" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.7" />
+    <PackageReference Include="Avalonia" Version="11.3.8" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.8" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.8" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.8" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.7" />
-    <PackageReference Include="Bilian.Ui" Version="1.22.0" />
-    <PackageReference Include="Bilian.Ui.Avalonia" Version="1.12.1" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.8" />
+    <PackageReference Include="Bilian.Ui" Version="1.23.0" />
+    <PackageReference Include="Bilian.Ui.Avalonia" Version="1.13.0" />
   </ItemGroup>
 
   <ItemGroup>
