@@ -2,7 +2,7 @@
 
 namespace BilianUiTest.Mvvm;
 
-public class FormViewModel : ExtendedViewModel
+public class FormViewModel : EnhancedViewModel
 {
     private string? text;
     public string? Text
@@ -29,12 +29,12 @@ public class FormViewModel : ExtendedViewModel
     public override void OnViewAppeared()
     {
         base.OnViewAppeared();
-        Debug.WriteLine($"OnViewActivated {GetType().Name}");
+        Debug.WriteLine($"{nameof(OnViewAppeared)} {GetType().Name}");
     }
 
     public override void OnViewDisappeared()
     {
         base.OnViewDisappeared();
-        Debug.WriteLine($"OnViewDeactivated {GetType().Name}");
+        Debug.WriteLine($"{nameof(OnViewDisappeared)} {GetType().Name}");
     }
 }

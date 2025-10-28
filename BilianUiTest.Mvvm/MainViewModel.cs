@@ -2,7 +2,7 @@
 
 namespace BilianUiTest.Mvvm;
 
-public class MainViewModel : ExtendedViewModel
+public class MainViewModel : EnhancedViewModel
 {
     public Command OpenDialogCommand { get; }
     public Command OpenModalDialogCommand { get; }
@@ -112,18 +112,18 @@ public class MainViewModel : ExtendedViewModel
     private void DoAction()
     {
         CustomAction customAction = new();
-        customAction.Execute(userInteractionsInvoker);
+        customAction.Execute(UserInteractionsInvoker);
     }
 
     public override void OnViewAppeared()
     {
         base.OnViewAppeared();
-        Debug.WriteLine($"OnViewActivated {GetType().Name}");
+        Debug.WriteLine($"{nameof(OnViewAppeared)} {GetType().Name}");
     }
 
     public override void OnViewDisappeared()
     {
         base.OnViewDisappeared();
-        Debug.WriteLine($"OnViewDeactivated {GetType().Name}");
+        Debug.WriteLine($"OnViewDisappeared {GetType().Name}");
     }
 }

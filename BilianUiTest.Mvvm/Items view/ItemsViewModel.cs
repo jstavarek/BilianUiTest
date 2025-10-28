@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class ItemsViewModel : ExtendedViewModel
+public class ItemsViewModel : EnhancedViewModel
 {
     public Command AddCommand { get; }
 

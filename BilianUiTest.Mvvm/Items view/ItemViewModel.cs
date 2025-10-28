@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class ItemViewModel : ExtendedViewModel
+public class ItemViewModel : EnhancedViewModel
 {
     private string? text;
     public string? Text

@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class CustomUserInteractionExampleViewModel : ExtendedViewModel
+public class CustomUserInteractionExampleViewModel : EnhancedViewModel
 {
     public Command GoCrazyCommand { get; }
 
@@ -12,6 +12,6 @@ public class CustomUserInteractionExampleViewModel : ExtendedViewModel
     private void GoCrazy()
     {
         Random random = new Random();
-        userInteractionsInvoker(new GoingCrazy(random.Next()));
+        UserInteractionsInvoker?.Invoke(new GoingCrazy(random.Next()));
     }
 }

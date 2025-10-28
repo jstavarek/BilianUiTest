@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class LazyLoadedViewModel : ExtendedViewModel
+public class LazyLoadedViewModel : EnhancedViewModel
 {
     bool messageHasBeenDisplayed;
 
