@@ -9,16 +9,17 @@
     xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
     xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui"
     Title="Bilian UI MAUI MVVM examples"
+    x:DataType="local:MainView"
     x:Name="thisView">
 
     <umat:TabView>
         <umat:TabItem Title="User controls">
-            <local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, Source={x:Reference Name=thisView}}" Margin="30,30,0,0"/>
+            <local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, Source={x:Reference Name=thisView}}" Margin="10,30"/>
         </umat:TabItem>
 
-        <umat:TabItem Title="Windows">
+        <umat:TabItem Title="Dialogs">
             <StackLayout Orientation="Horizontal" Margin="30,30,0,0">
-                <Button Text="Form window" Command="{Binding Path=Model.OpenDialogCommand}"/>
+                <!--<Button Text="Form window" Command="{Binding Path=Model.OpenDialogCommand}"/>-->
                 <Button Text="Form dialog" Command="{Binding Path=Model.OpenModalDialogCommand}" Margin="20,0,0,0"/>
             </StackLayout>
         </umat:TabItem>
@@ -28,14 +29,14 @@
                 <Button Text="Message" Command="{Binding Path=Model.ShowMessageCommand}"/>
                 <Button Text="Error" Command="{Binding Path=Model.InvokeExceptionCommand}" Margin="20,0,0,0"/>
                 <Button Text="Query" Command="{Binding Path=Model.QueryUserCommand}" Margin="20,0,0,0"/>
-                <Button Text="Pick file" Command="{Binding Path=Model.PickFileCommand}" Margin="20,0,0,0"/>
+                <!--<Button Text="Pick file" Command="{Binding Path=Model.PickFileCommand}" Margin="20,0,0,0"/>
                 <Button Text="Set file name file" Command="{Binding Path=Model.SetFileNameCommand}" Margin="20,0,0,0"/>
-                <Button Text="Pick folder" Command="{Binding Path=Model.PickFolderCommand}" Margin="20,0,0,0"/>
+                <Button Text="Pick folder" Command="{Binding Path=Model.PickFolderCommand}" Margin="20,0,0,0"/>-->
             </StackLayout>
         </umat:TabItem>
 
         <umat:TabItem Title="Items">
-            <local:ItemsView Model="{Binding Path=Model.ItemsViewModel, Source={x:Reference Name=thisView}}" Margin="30,30,0,0"/>
+            <local:ItemsView Model="{Binding Path=Model.ItemsViewModel, Source={x:Reference Name=thisView}}" Margin="10,30"/>
         </umat:TabItem>
 
         <umat:TabItem Title="Custom user interactions">

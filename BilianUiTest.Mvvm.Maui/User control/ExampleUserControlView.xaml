@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<bv:ContentViewViewWithModel x:Class="BilianUiTest.Mvvm.Maui.ExampleUserControlView" x:TypeArguments="bUiTest:FormViewModel"
+<bv:ContentViewViewWithModel x:Class="BilianUiTest.Mvvm.Maui.ExampleUserControlView" x:TypeArguments="bUiTest:SimpleFormViewModel"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:bv="clr-namespace:Bilian.Ui.Maui;assembly=Bilian.Ui.Maui"
     xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
-    xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui">
+    xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui"
+    x:DataType="local:ExampleUserControlView">
 
-    <!--<behaviors:Interaction.Behaviors>
-        <bv:ElementFocusBehaviour/>
-    </behaviors:Interaction.Behaviors>-->
-
-    <StackLayout HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="400">
+    <StackLayout VerticalOptions="Start">
         <Label Text="Type text"/>
-        <Entry VerticalOptions="Start" Text="{Binding Path=Model.Text}"/>
+        <Entry VerticalOptions="Start" Text="{Binding Path=Model.Text}" ReturnCommand="{Binding Path=Model.ConfirmCommand}"/>
         <Label Text="{Binding Path=Message}" TextColor="Red" Margin="0,10,0,0"/>
         <Button Text="Ok" Command="{Binding Path=Model.ConfirmCommand}" Margin="0,20,0,0" HorizontalOptions="End"/>
     </StackLayout>

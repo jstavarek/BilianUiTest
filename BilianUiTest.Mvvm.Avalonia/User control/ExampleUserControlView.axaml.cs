@@ -1,6 +1,6 @@
 namespace BilianUiTest.Mvvm.Avalonia;
 
-public partial class ExampleUserControlView : UserControlViewWithModel<FormViewModel>
+public partial class ExampleUserControlView : UserControlViewWithModel<SimpleFormViewModel>
 {
     private string? message;
     public string? Message

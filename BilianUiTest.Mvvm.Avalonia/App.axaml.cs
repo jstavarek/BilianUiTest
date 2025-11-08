@@ -12,7 +12,7 @@ public partial class App : UiAbstractionApplication
         ViewCollection viewCollection = new();
         viewCollection.Add<MainViewModel, MainView>();
         viewCollection.Add<DialogViewModel, NonModalWindowView>();
-        viewCollection.Add<ModalDialogViewModel, ModalWindowView>();
+        viewCollection.Add<ModalDialogViewModel, ModalDialogView>();
         viewCollection.Add<ItemViewModel, ItemView>();
         viewCollection.Add<LazyLoadedViewModel, LazyLoadedView>();
         ViewBuilder.RegisterViews(viewCollection);

@@ -61,15 +61,22 @@
 
 	<ItemGroup>
 		<PackageReference Include="Bilian.Ui" Version="1.24.0" />
-		<PackageReference Include="Bilian.Ui.Maui" Version="1.9.0" />
+		<PackageReference Include="Bilian.Ui.Maui" Version="1.10.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.120" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
+		<PackageReference Include="RGPopup.Maui" Version="1.2.2" />
 		<PackageReference Include="UraniumUI" Version="2.13.0" />
 		<PackageReference Include="UraniumUI.Material" Version="2.13.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\BilianUiTest.Mvvm\BilianUiTest.Mvvm.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Modal dialog\ModalDialogView.xaml.cs">
+	    <DependentUpon>ModalDialogView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>

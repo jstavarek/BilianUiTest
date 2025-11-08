@@ -1,4 +1,5 @@
-﻿using UraniumUI;
+﻿using RGPopup.Maui.Extensions;
+using UraniumUI;
 
 namespace BilianUiTest.Mvvm.Maui;
 
@@ -9,6 +10,11 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiRGPopup(config =>
+            {
+                config.BackPressHandler = null;
+                config.FixKeyboardOverlap = true;
+            })
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

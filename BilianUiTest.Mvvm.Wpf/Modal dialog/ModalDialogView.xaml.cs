@@ -1,8 +1,8 @@
 ﻿namespace BilianUiTest.Mvvm.Wpf;
 
-public partial class ModalWindowView
+public partial class ModalDialogView
 {
-    public ModalWindowView(ModalDialogViewModel model) : base(model)
+    public ModalDialogView(ModalDialogViewModel model) : base(model)
     {
         DataContext = this;
         InitializeComponent();

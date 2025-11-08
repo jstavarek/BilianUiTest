@@ -11,15 +11,15 @@
     x:Name="thisView">
 
     <TabControl>
-        <TabItem Header="Windows">
+        <TabItem Header="User controls">
+            <local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, ElementName=thisView}" Margin="30,30,0,0"/>
+        </TabItem>
+
+        <TabItem Header="Dialogs">
             <StackPanel Orientation="Horizontal" Margin="30,30,0,0">
                 <Button Content="Form window" Command="{bv:CommandBinding Path=Model.OpenDialogCommand}"/>
                 <Button Content="Form dialog" Command="{bv:CommandBinding Path=Model.OpenModalDialogCommand}" Margin="20,0,0,0"/>
             </StackPanel>
-        </TabItem>
-        
-        <TabItem Header="User controls">
-            <local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, ElementName=thisView}" Margin="30,30,0,0"/>
         </TabItem>
 
         <TabItem Header="Advanced">

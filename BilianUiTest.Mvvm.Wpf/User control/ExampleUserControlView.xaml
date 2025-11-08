@@ -1,4 +1,4 @@
-﻿<bv:UserControlViewWithModel x:Class="BilianUiTest.Mvvm.Wpf.ExampleUserControlView" x:TypeArguments="bUiTest:FormViewModel"
+﻿<bv:UserControlViewWithModel x:Class="BilianUiTest.Mvvm.Wpf.ExampleUserControlView" x:TypeArguments="bUiTest:SimpleFormViewModel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8,6 +8,10 @@
     xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
     xmlns:local="clr-namespace:BilianUiTest.Mvvm.Wpf"
     mc:Ignorable="d" d:DataContext="{d:DesignInstance local:ExampleUserControlView, d:IsDesignTimeCreatable=False}">
+
+    <behaviors:Interaction.Behaviors>
+        <local:ElementFocusBehaviour/>
+    </behaviors:Interaction.Behaviors>
 
     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="400">
         <Label Content="Type text"/>

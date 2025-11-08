@@ -6,10 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:bv="clr-namespace:Bilian.Ui.Maui;assembly=Bilian.Ui.Maui"
     xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
-    xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui">
+    xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui"
+    x:DataType="local:ItemView">
 
-    <Border Stroke="LightGray" StrokeThickness="2" Margin="0,0,0,20" HorizontalOptions="Start" VerticalOptions="Start" Padding="10">
-        <VerticalStackLayout HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="500">
+    <Border Stroke="LightGray" StrokeThickness="2" Margin="0,0,0,20" VerticalOptions="Start" Padding="10">
+        <VerticalStackLayout VerticalOptions="Start">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -18,11 +19,11 @@
 
                 <VerticalStackLayout Grid.Column="0">
                     <Label Text="Type text"/>
-                    <Entry Text="{Binding Path=Model.Text}" VerticalOptions="Start" ReturnCommand="{Binding Path=Model.ConfirmEntriesCommand}"/>
+                    <Entry Text="{Binding Path=Model.Text}" VerticalOptions="Start" ReturnCommand="{Binding Path=Model.ConfirmCommand}"/>
                 </VerticalStackLayout>
 
                 <HorizontalStackLayout Grid.Column="1" Margin="10,0,0,0" VerticalOptions="End">
-                    <Button Text="Apply" Command="{Binding Path=Model.ConfirmEntriesCommand}"/>
+                    <Button Text="Apply" Command="{Binding Path=Model.ConfirmCommand}"/>
                     <Button Text="Remove" Command="{Binding Path=Model.RemoveCommand}" Margin="10,0,0,0"/>
                 </HorizontalStackLayout>
             </Grid>

@@ -12,7 +12,7 @@
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="500">
             <DockPanel LastChildFill="True">
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Bottom">
-                    <Button Content="Apply" Command="{bv:CommandBinding Path=Model.ConfirmEntriesCommand}"/>
+                    <Button Content="Apply" Command="{bv:CommandBinding Path=Model.ConfirmCommand}"/>
                     <Button Content="Remove" Command="{bv:CommandBinding Path=Model.RemoveCommand}" Margin="10,0,0,0"/>
                 </StackPanel>
 
