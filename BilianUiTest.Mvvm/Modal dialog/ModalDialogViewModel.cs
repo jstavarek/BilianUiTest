@@ -18,6 +18,7 @@ public class ModalDialogViewModel : EnhancedViewModel
     }
 
     public Command ConfirmCommand { get; }
+    public Command CancelCommand { get; }
 
     private readonly Action<string> onTextEnteredAction;
 
@@ -27,6 +28,7 @@ public class ModalDialogViewModel : EnhancedViewModel
     {
         this.onTextEnteredAction = onTextEnteredAction;
         ConfirmCommand = new Command(Confirm, () => string.IsNullOrEmpty(Text) == false);
+        CancelCommand = new Command(HideView);
     }
 
     public void Confirm()

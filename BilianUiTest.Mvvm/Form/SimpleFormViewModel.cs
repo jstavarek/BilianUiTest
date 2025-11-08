@@ -2,7 +2,7 @@
 
 namespace BilianUiTest.Mvvm;
 
-public class FormViewModel : EnhancedViewModel
+public class SimpleFormViewModel : EnhancedViewModel
 {
     private string? text;
     public string? Text
@@ -21,9 +21,9 @@ public class FormViewModel : EnhancedViewModel
 
     public Command ConfirmCommand { get; }
 
-    public FormViewModel()
+    public SimpleFormViewModel()
     {
-        ConfirmCommand = new Command(() => ShowInformation($"You entered \"{Text}\"", "Confirmation", null), () => string.IsNullOrEmpty(Text) == false);
+        ConfirmCommand = new Command(() => ShowInformation($"You entered: {Text}", "Confirmation", null), () => string.IsNullOrEmpty(Text) == false);
     }
 
     public override void OnViewAppeared()

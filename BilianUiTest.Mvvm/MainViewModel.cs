@@ -15,7 +15,7 @@ public class MainViewModel : EnhancedViewModel
     public Command PickFolderCommand { get; }
     public Command DoActionCommand { get; }
 
-    public FormViewModel ExampleControlViewModel { get; }
+    public SimpleFormViewModel ExampleControlViewModel { get; }
     public ItemsViewModel ItemsViewModel { get; }
     public CustomUserInteractionExampleViewModel CustomUserInteractionExampleViewModel { get; }
     public Func<IViewModel> GetLazyLoadedViewModel { get; }
@@ -36,7 +36,7 @@ public class MainViewModel : EnhancedViewModel
         PickFolderCommand = new Command(PickFolder);
         DoActionCommand = new Command(DoAction);
 
-        ExampleControlViewModel = new FormViewModel();
+        ExampleControlViewModel = new SimpleFormViewModel();
         ItemsViewModel = new ItemsViewModel();
         CustomUserInteractionExampleViewModel = new CustomUserInteractionExampleViewModel();
         GetLazyLoadedViewModel = () => new LazyLoadedViewModel();
@@ -67,7 +67,7 @@ public class MainViewModel : EnhancedViewModel
 
     private void OpenModalDialog()
     {
-        ShowView(new ModalDialogViewModel((text) => ShowInformation(@$"You entered ""{text}""", "Summary", null)));
+        ShowView(new ModalDialogViewModel((text) => ShowInformation(@$"You entered: {text}", "Summary", null)));
     }
 
     private void PickFile()

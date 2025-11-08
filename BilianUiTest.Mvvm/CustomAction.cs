@@ -4,6 +4,6 @@ public class CustomAction : IUiAction
 {
     public void Execute(UserInteractionsInvoker? userInteractionsInvoker)
     {
-        userInteractionsInvoker?.ShowInformation("Text", "Title", null);
+        userInteractionsInvoker?.ShowInformation("UI action executed", "UI action example", null);
     }
 }
