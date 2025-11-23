@@ -3,15 +3,16 @@
 public class CustomUserInteractionExampleViewModel : EnhancedViewModel
 {
     public Command GoCrazyCommand { get; }
+    private readonly Random random;
 
     public CustomUserInteractionExampleViewModel()
     {
         GoCrazyCommand = new Command(GoCrazy);
+        random = new Random();
     }
 
     private void GoCrazy()
     {
-        Random random = new Random();
         UserInteractionsInvoker?.Invoke(new GoingCrazy(random.Next()));
     }
 }

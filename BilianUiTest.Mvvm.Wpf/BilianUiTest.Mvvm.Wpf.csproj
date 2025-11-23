@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-	<TargetFramework>net9.0-windows7.0</TargetFramework>
+	<TargetFramework>net10.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <Configurations>Debug;Release;R-Installer;R-App;R-LicenseEncoder</Configurations>
@@ -17,9 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bilian.Ui" Version="1.24.0" />
-    <PackageReference Include="Bilian.Ui.Wpf" Version="1.20.0" />
+    <PackageReference Include="Bilian.Ui" Version="1.25.0" />
+    <PackageReference Include="Bilian.Ui.Wpf" Version="1.21.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="WPF-UI" Version="4.0.3" />
   </ItemGroup>
 
   <ItemGroup>

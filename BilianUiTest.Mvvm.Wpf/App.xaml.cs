@@ -13,20 +13,22 @@ public partial class App
         style.Setters.Add(new Setter(Button.MinWidthProperty, 50.0));
         Resources.Add(typeof(Button), style);
 
+        Core.UserInteractionsProviderClass = typeof(CommonUserInteractionsProvider);
+
         ViewCollection viewCollection = new();
         viewCollection.Add<MainViewModel, MainView>();
         viewCollection.Add<DialogViewModel, NonModalWindowView>();
         viewCollection.Add<ModalDialogViewModel, ModalDialogView>();
         viewCollection.Add<ItemViewModel, ItemView>();
         viewCollection.Add<LazyLoadedViewModel, LazyLoadedView>();
-        ViewBuilder.RegisterViews(viewCollection);
+        Core.ViewBuilder.RegisterViews(viewCollection);
     }
 
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
 
-        IView mainView = ViewBuilder.BuildView(new MainViewModel());
+        IView mainView = Core.ViewBuilder.BuildView(new MainViewModel());
         MainWindow = (Window)mainView;
         mainView.Appear(null);
     }

@@ -8,7 +8,7 @@ public class MainViewModel : EnhancedViewModel
     public Command OpenModalDialogCommand { get; }
 
     public Command ShowMessageCommand { get; }
-    public Command InvokeExceptionCommand { get; }
+    public Command ShowErrorCommand { get; }
     public Command QueryUserCommand { get; }
     public Command PickFileCommand { get; }
     public Command SetFileNameCommand { get; }
@@ -29,7 +29,7 @@ public class MainViewModel : EnhancedViewModel
         OpenModalDialogCommand = new Command(OpenModalDialog);
 
         ShowMessageCommand = new Command(ShowMessage);
-        InvokeExceptionCommand = new Command(InvokeException);
+        ShowErrorCommand = new Command(ShowError);
         QueryUserCommand = new Command(QueryUser);
         PickFileCommand = new Command(PickFile);
         SetFileNameCommand = new Command(SetFileName);
@@ -46,6 +46,18 @@ public class MainViewModel : EnhancedViewModel
     private void ShowMessage()
     {
         ShowInformation("Text", "Title", null);
+    }
+
+    private void ShowError()
+    {
+        try
+        {
+            throw new Exception("Error happened");
+        }
+        catch (Exception exception)
+        {
+            ShowError("Error description", "Error handling example", exception, null);
+        }
     }
 
     private void QueryUser()
@@ -95,18 +107,6 @@ public class MainViewModel : EnhancedViewModel
             if (pickedFolder != null)
                 ShowInformation($"Folder {pickedFolder} was picked.", "Folder picking", null);
         });
-    }
-
-    private void InvokeException()
-    {
-        try
-        {
-            throw new Exception("Error happened");
-        }
-        catch (Exception exception)
-        {
-            ShowError("Error description", "Error handling example", exception, null);
-        }
     }
 
     private void DoAction()

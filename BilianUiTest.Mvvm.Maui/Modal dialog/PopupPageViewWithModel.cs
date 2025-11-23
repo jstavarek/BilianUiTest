@@ -2,21 +2,20 @@
 
 namespace BilianUiTest.Mvvm.Maui;
 
-public partial class PopupPageViewWithModel<TModel> : PopupPageView, IViewWithModel<TModel> where TModel : IViewModel
+public partial class PopupPageViewWithModel<TModel> : PopupPageView, IView<TModel> where TModel : IViewModel
 {
-    private TModel model = default!;
     public TModel Model
     {
-        get { return model; }
+        get { return field; }
         private set
         {
             if (value == null)
                 throw new Exception("Model must not be set to null");
 
-            model = value;
+            field = value;
             OnModelSet();
         }
-    }
+    } = default!;
 
     public PopupPageViewWithModel()
     {

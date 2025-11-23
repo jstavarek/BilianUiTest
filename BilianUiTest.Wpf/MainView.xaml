@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf"
         xmlns:local="clr-namespace:BilianUiTest.Wpf"
-        mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainView, d:IsDesignTimeCreatable=False}"
-        Title="Bilian.UI WPF examples" Height="450" Width="800">
+        Title="Bilian.UI WPF examples" Height="450" Width="800"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainView, d:IsDesignTimeCreatable=False}">
     
     <TabControl>
-        <TabItem Header="Windows">
+        <TabItem Header="Dialogs">
             <StackPanel Orientation="Horizontal" Margin="30,30,0,0" VerticalAlignment="Top">
                 <Button Content="Form window" Command="{bv:CommandBinding Path=OpenDialogCommand}"/>
             </StackPanel>
@@ -18,7 +18,7 @@
         <TabItem Header="Advanced">
             <StackPanel Orientation="Horizontal" Margin="30,30,0,0" VerticalAlignment="Top">
                 <Button Content="Message" Command="{bv:CommandBinding Path=ShowMessageCommand}"/>
-                <Button Content="Error" Command="{bv:CommandBinding Path=InvokeExceptionCommand}" Margin="20,0,0,0"/>
+                <Button Content="Error" Command="{bv:CommandBinding Path=ShowErrorCommand}" Margin="20,0,0,0"/>
                 <Button Content="Query" Command="{bv:CommandBinding Path=QueryUserCommand}" Margin="20,0,0,0"/>
                 <Button Content="Pick file" Command="{bv:CommandBinding Path=PickFileCommand}" Margin="20,0,0,0"/>
                 <Button Content="Set file name file" Command="{bv:CommandBinding Path=SetFileNameCommand}" Margin="20,0,0,0"/>

@@ -2,18 +2,16 @@
 
 public class ModalDialogViewModel : EnhancedViewModel
 {
-    private string? text;
     public string? Text
     {
-        get { return text; }
+        get { return field; }
         set
         {
-            if (value != text)
-            {
-                text = value;
-                NotifyPropertyChanged(nameof(Text));
-                ConfirmCommand.ChangeCanExecute();
-            }
+            if (value == field) return;
+
+            field = value;
+            NotifyPropertyChanged(nameof(Text));
+            ConfirmCommand.ChangeCanExecute();
         }
     }
 

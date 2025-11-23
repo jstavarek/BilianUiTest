@@ -14,8 +14,11 @@ public partial class PopupPageView : PopupPage, IView, INotifyPropertyChanged
 
     public PopupPageView()
     {
-        userInteractionsInvoker = InvokeUserInteraction;
-        userInteractionsProvider = this.GetUserInteractionsProvider(false);
+        userInteractionsProvider = Core.GetUserInteractionsProvider(this);
+        userInteractionsProvider.RegisterHandler<ShowingView>((showingView) => ShowView(showingView.View ?? Core.ViewBuilder.BuildView(showingView.ViewModel!)));
+        userInteractionsProvider.RegisterHandler<HidingView>((hidingView) => Disappear());
+        userInteractionsInvoker = userInteractionsProvider.InvokeUserInteraction;
+
         CloseWhenBackgroundIsClicked = false;
     }
 
@@ -57,26 +60,5 @@ public partial class PopupPageView : PopupPage, IView, INotifyPropertyChanged
     protected void NotifyPropertyChanged(string? propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
-    protected virtual void InvokeUserInteraction(IUserInteraction userInteraction)
-    {
-        void ProvideUiThreadUserInteraction(IUserInteraction userInteraction)
-        {
-            if (userInteraction is ShowingView showingView)
-            {
-                var view = showingView.View ?? ((UiAbstractionApplication)Application.Current!).ViewBuilder.BuildView(showingView.ViewModel!);
-                ShowView(view);
-            }
-            else if (userInteraction is HidingView)
-                Disappear();
-            else
-                userInteractionsProvider.ProvideUserInteraction(userInteraction, this);
-        }
-
-        if (Dispatcher.IsDispatchRequired)
-            ProvideUiThreadUserInteraction(userInteraction);
-        else
-            Dispatcher.Dispatch(() => ProvideUiThreadUserInteraction(userInteraction));
     }
 }

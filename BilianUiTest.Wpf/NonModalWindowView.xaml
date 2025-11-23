@@ -7,9 +7,13 @@
     xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf"
     xmlns:local="clr-namespace:BilianUiTest.Wpf"
     mc:Ignorable="d" d:DataContext="{d:DesignInstance local:NonModalWindowView, d:IsDesignTimeCreatable=False}"
-    Title="Example form window" SizeToContent="WidthAndHeight">
+    Title="Non modal window" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" ShowInTaskbar="False">
 
-    <StackPanel HorizontalAlignment="Left" Width="300">
+    <behaviors:Interaction.Behaviors>
+        <local:ElementFocusBehaviour/>
+    </behaviors:Interaction.Behaviors>
+
+    <StackPanel HorizontalAlignment="Left" Width="300" Margin="20">
         <Label Content="Type text"/>
         <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Text, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Content="Ok" Command="{bv:CommandBinding Path=ConfirmCommand}" Margin="0,20,0,0" HorizontalAlignment="Right" IsDefault="True"/>

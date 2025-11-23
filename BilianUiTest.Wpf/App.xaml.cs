@@ -2,6 +2,11 @@
 
 public partial class App
 {
+    public App()
+    {
+        Core.UserInteractionsProviderClass = typeof(CommonUserInteractionsProvider);
+    }
+
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);

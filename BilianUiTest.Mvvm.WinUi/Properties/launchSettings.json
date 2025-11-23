@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BilianUiTest.Mvvm.WinUi (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "BilianUiTest.Mvvm.WinUi (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

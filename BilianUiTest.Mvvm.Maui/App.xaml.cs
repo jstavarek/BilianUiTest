@@ -6,17 +6,17 @@ public partial class App
     {
         InitializeComponent();
 
+        Core.UserInteractionsProviderClass = typeof(CommonUserInteractionsProvider);
+
         ViewCollection viewCollection = new();
         viewCollection.Add<MainViewModel, MainView>();
         //viewCollection.Add<DialogViewModel, NonModalWindowView>();
         viewCollection.Add<ModalDialogViewModel, ModalDialogView>();
         viewCollection.Add<ItemViewModel, ItemView>();
         viewCollection.Add<LazyLoadedViewModel, LazyLoadedView>();
-        ViewBuilder.RegisterViews(viewCollection);
+        Core.ViewBuilder.RegisterViews(viewCollection);
 
-        IView mainView = ViewBuilder.BuildView(new MainViewModel());
-        //Windows[0].Page = (Page)mainView;
+        IView mainView = Core.ViewBuilder.BuildView(new MainViewModel());
         MainPage = (Page)mainView;
-        //mainView.Appear(null);
     }
 }

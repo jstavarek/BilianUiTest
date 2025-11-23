@@ -3,11 +3,13 @@ using Avalonia.Markup.Xaml;
 
 namespace BilianUiTest.Mvvm.Avalonia;
 
-public partial class App : UiAbstractionApplication
+public partial class App : Application
 {
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+
+        Core.UserInteractionsProviderClass = typeof(CommonUserInteractionsProvider);
 
         ViewCollection viewCollection = new();
         viewCollection.Add<MainViewModel, MainView>();
@@ -15,14 +17,14 @@ public partial class App : UiAbstractionApplication
         viewCollection.Add<ModalDialogViewModel, ModalDialogView>();
         viewCollection.Add<ItemViewModel, ItemView>();
         viewCollection.Add<LazyLoadedViewModel, LazyLoadedView>();
-        ViewBuilder.RegisterViews(viewCollection);
+        Core.ViewBuilder.RegisterViews(viewCollection);
     }
 
     public override void OnFrameworkInitializationCompleted()
     {
         base.OnFrameworkInitializationCompleted();
 
-        IView mainView = ViewBuilder.BuildView(new MainViewModel());
+        IView mainView = Core.ViewBuilder.BuildView(new MainViewModel());
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             desktop.MainWindow = (Window)mainView;
 

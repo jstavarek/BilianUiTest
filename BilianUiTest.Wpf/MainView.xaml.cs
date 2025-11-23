@@ -5,7 +5,7 @@ public partial class MainView
     public Command OpenDialogCommand { get; }
 
     public Command ShowMessageCommand { get; }
-    public Command InvokeExceptionCommand { get; }
+    public Command ShowErrorCommand { get; }
     public Command QueryUserCommand { get; }
     public Command PickFileCommand { get; }
     public Command SetFileNameCommand { get; }
@@ -16,7 +16,7 @@ public partial class MainView
         OpenDialogCommand = new Command(OpenDialog);
 
         ShowMessageCommand = new Command(ShowMessage);
-        InvokeExceptionCommand = new Command(InvokeException);
+        ShowErrorCommand = new Command(InvokeException);
         QueryUserCommand = new Command(QueryUser);
         PickFileCommand = new Command(PickFile);
         SetFileNameCommand = new Command(SetFileName);

@@ -10,7 +10,7 @@
     x:DataType="local:CustomUserInteractionExampleView">
 
     <StackLayout>
-        <Button Text="Go crazy" Command="{Binding Path=Model.GoCrazyCommand}" Margin="0,0,0,50"/>
-        <Border Background="{Binding Path=PanelBackground}" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="200" HeightRequest="200" StrokeThickness="0"/>
+        <Button Text="Go crazy" Command="{Binding Path=Model.GoCrazyCommand}"/>
+        <Border Background="{Binding Path=PanelBackground}" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="200" HeightRequest="200" StrokeThickness="0" Margin="0,20,0,0"/>
     </StackLayout>
 </bv:ContentViewViewWithModel>

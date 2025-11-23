@@ -5,24 +5,20 @@ namespace BilianUiTest.Mvvm.Avalonia;
 public partial class CustomUserInteractionExampleView : UserControlViewWithModel<CustomUserInteractionExampleViewModel>
 {
     // This is an example of a property that is not present in the view model and still can be bound to in XAML
-    // TODO: set to initial value
-    private Brush panelBackground;
     public Brush PanelBackground
     {
-        get { return panelBackground; }
+        get { return field; }
         private set
         {
-            if (value != panelBackground)
-            {
-                panelBackground = value;
-                NotifyPropertyChanged(nameof(PanelBackground));
-            }
+            if (value == field) return;
+
+            field = value;
+            NotifyPropertyChanged(nameof(PanelBackground));
         }
-    }
+    } = new SolidColorBrush(Colors.Transparent);
 
     public CustomUserInteractionExampleView()
     {
-        userInteractionsProvider = this.GetUserInteractionsProvider(true);
         userInteractionsProvider.RegisterHandler<GoingCrazy>(HandleGoingCrazy);
 
         InitializeComponent();
@@ -33,7 +29,7 @@ public partial class CustomUserInteractionExampleView : UserControlViewWithModel
         DataContext = this;
     }
 
-    private void HandleGoingCrazy(IView view, GoingCrazy goingCrazy)
+    private void HandleGoingCrazy(GoingCrazy goingCrazy)
     {
         PanelBackground = new SolidColorBrush(Color.FromArgb(0xFF, (byte)((goingCrazy.Level >> 16) & 0xFF), (byte)((goingCrazy.Level >> 8) & 0xFF), (byte)(goingCrazy.Level & 0xFF)));
     }

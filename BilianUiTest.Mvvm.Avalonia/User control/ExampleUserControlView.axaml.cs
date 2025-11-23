@@ -2,24 +2,20 @@ namespace BilianUiTest.Mvvm.Avalonia;
 
 public partial class ExampleUserControlView : UserControlViewWithModel<SimpleFormViewModel>
 {
-    private string? message;
     public string? Message
     {
-        get { return message; }
+        get { return field; }
         private set
         {
-            if (value != message)
-            {
-                message = value;
-                NotifyPropertyChanged(nameof(Message));
-            }
+            if (value == field) return;
+            field = value;
+            NotifyPropertyChanged(nameof(Message));
         }
     }
 
     public ExampleUserControlView()
     {
-        userInteractionsProvider = this.GetUserInteractionsProvider(true);
-        userInteractionsProvider.RegisterHandler<ShowingInformation>((view, showingInformation) => Message = showingInformation.Text);
+        userInteractionsProvider.RegisterHandler<ShowingInformation>((showingInformation) => Message = showingInformation.Text);
 
         InitializeComponent();
     }

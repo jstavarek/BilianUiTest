@@ -17,7 +17,7 @@
 			</TabItem>
 
 			<TabItem Header="Windows">
-				<StackPanel Orientation="Horizontal" Margin="30,30,0,0">
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,30,0,0">
 					<Button Content="Form window" Command="{Binding Path=Model.OpenDialogCommand}"/>
 					<Button Content="Form dialog" Command="{Binding Path=Model.OpenModalDialogCommand}" Margin="20,0,0,0"/>
 				</StackPanel>
@@ -26,7 +26,7 @@
 			<TabItem Header="Advanced">
 				<StackPanel Orientation="Horizontal" Margin="30,30,0,0">
 					<Button Content="Message" Command="{Binding Path=Model.ShowMessageCommand}"/>
-					<Button Content="Error" Command="{Binding Path=Model.InvokeExceptionCommand}" Margin="20,0,0,0"/>
+					<Button Content="Error" Command="{Binding Path=Model.ShowErrorCommand}" Margin="20,0,0,0"/>
 					<Button Content="Query" Command="{Binding Path=Model.QueryUserCommand}" Margin="20,0,0,0"/>
 					<Button Content="Pick file" Command="{Binding Path=Model.PickFileCommand}" Margin="20,0,0,0"/>
 					<Button Content="Set file name file" Command="{Binding Path=Model.SetFileNameCommand}" Margin="20,0,0,0"/>
@@ -47,7 +47,7 @@
 			</TabItem>
 
 			<TabItem Header="UI actions">
-				<Button Content="Action" Command="{Binding Path=Model.DoActionCommand}" Margin="30,30,0,0"/>
+				<Button Content="Action" Command="{Binding Path=Model.DoActionCommand}" Margin="30,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 			</TabItem>
 
 			<TabItem Header="Content control view">

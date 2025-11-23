@@ -9,8 +9,8 @@
         mc:Ignorable="d" d:DataContext="{d:DesignInstance local:CustomUserInteractionExampleView, d:IsDesignTimeCreatable=False}">
 
     <StackPanel>
-        <Button Content="Go crazy" Command="{bv:CommandBinding Path=Model.GoCrazyCommand}" Margin="0,0,0,50"/>
-        <Border Background="{Binding Path=PanelBackground}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200"/>
+        <Button Content="Go crazy" Command="{bv:CommandBinding Path=Model.GoCrazyCommand}"/>
+        <Border Background="{Binding Path=PanelBackground}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200" Margin="0,20,0,0"/>
     </StackPanel>
     
 </bv:UserControlViewWithModel>

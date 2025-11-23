@@ -1,5 +1,14 @@
-﻿<bv:UiAbstractionApplication x:Class="BilianUiTest.Mvvm.Wpf.App"
+﻿<Application x:Class="BilianUiTest.Mvvm.Wpf.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf">
-</bv:UiAbstractionApplication>
+    xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf"
+    ShutdownMode="OnLastWindowClose">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/PresentationFramework.Fluent;component/Themes/Fluent.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
