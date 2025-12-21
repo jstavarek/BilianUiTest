@@ -16,7 +16,7 @@ public partial class App
         viewCollection.Add<LazyLoadedViewModel, LazyLoadedView>();
         Core.ViewBuilder.RegisterViews(viewCollection);
 
-        IView mainView = Core.ViewBuilder.BuildView(new MainViewModel());
+        var mainView = Core.ViewBuilder.BuildView(new MainViewModel());
         MainPage = (Page)mainView;
     }
 }

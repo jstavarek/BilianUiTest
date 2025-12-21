@@ -1,4 +1,5 @@
-﻿using RGPopup.Maui.Extensions;
+﻿using CommunityToolkit.Maui;
+
 using UraniumUI;
 
 namespace BilianUiTest.Mvvm.Maui;
@@ -10,10 +11,10 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
-            .UseMauiRGPopup(config =>
+            .UseMauiCommunityToolkit(
+            config =>
             {
-                config.BackPressHandler = null;
-                config.FixKeyboardOverlap = true;
+                config.SetShouldEnableSnackbarOnWindows(true);
             })
             .ConfigureFonts(fonts =>
             {

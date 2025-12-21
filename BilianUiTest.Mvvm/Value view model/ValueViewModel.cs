@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm;
 
-public class CustomControlViewModel : ViewModel
+public class ValueViewModel : ViewModel
 {
     public required string Value { get; set; }
 }

@@ -9,6 +9,8 @@ public class LazyLoadedViewModel : EnhancedViewModel
         base.OnViewAppeared();
 
         if (messageHasBeenDisplayed == false)
-            ShowInformation("I was created and displayed for the first time now!", "Lazy loaded view", () => messageHasBeenDisplayed = true);
+            ShowInformation("View instantiated now!", "Lazy loaded view");
+
+        messageHasBeenDisplayed = true;
     }
 }

@@ -11,8 +11,8 @@
 
     <StackLayout VerticalOptions="Start">
         <Label Text="Type text"/>
-        <Entry VerticalOptions="Start" Text="{Binding Path=Model.Text}" ReturnCommand="{Binding Path=Model.ConfirmCommand}"/>
-        <Label Text="{Binding Path=Message}" TextColor="Red" Margin="0,10,0,0"/>
-        <Button Text="Ok" Command="{Binding Path=Model.ConfirmCommand}" Margin="0,20,0,0" HorizontalOptions="End"/>
+        <Entry VerticalOptions="Start" Text="{Binding Path=Model.Text}" ReturnCommand="{Binding Path=Model.SubmitCommand}"/>
+        <Label Text="{Binding Path=Message}" FontAttributes="Italic" Margin="0,10,0,0"/>
+        <Button Text="Ok" Command="{Binding Path=Model.SubmitCommand}" Margin="0,10,0,0" HorizontalOptions="End"/>
     </StackLayout>
 </bv:ContentViewViewWithModel>

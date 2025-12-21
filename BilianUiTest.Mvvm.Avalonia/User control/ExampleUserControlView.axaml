@@ -16,7 +16,7 @@
 	<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" IsTabStop="False">
 		<Label Content="Type text" IsTabStop="False"/>
 		<TextBox VerticalAlignment="Top" Text="{Binding Path=Model.Text}"/>
-		<TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap" Foreground="Red" Margin="0,10,0,0" IsTabStop="False"/>
-		<Button Content="Ok" Command="{Binding Path=Model.ConfirmCommand}" Margin="0,10,0,0" HorizontalAlignment="Right" IsDefault="True" MinWidth="40"/>
+		<TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap" FontStyle="Italic" Margin="0,10,0,0" IsTabStop="False"/>
+		<Button Content="OK" Command="{Binding Path=Model.SubmitCommand}" Margin="0,10,0,0" HorizontalAlignment="Right" IsDefault="True" MinWidth="40"/>
 	</StackPanel>
 </bv:UserControlViewWithModel>

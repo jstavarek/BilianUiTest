@@ -1,6 +1,6 @@
 ﻿namespace BilianUiTest.Mvvm.Wpf;
 
-public class TestControl : ControlViewWithModel<CustomControlViewModel>
+public class TestControl : ControlViewWithModel<ValueViewModel>
 {
     public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(nameof(Title), typeof(string), typeof(TestControl));
     public string Title
@@ -13,7 +13,7 @@ public class TestControl : ControlViewWithModel<CustomControlViewModel>
 
     static TestControl()
     {
-        ResourceDictionary resources = (ResourceDictionary)Application.LoadComponent(new Uri(@"/BilianUiTest.Mvvm.Wpf;component/TestControl/TestControl.xaml", UriKind.Relative));
+        ResourceDictionary resources = (ResourceDictionary)Application.LoadComponent(new Uri(@"/BilianUiTest.Mvvm.Wpf;component/Templated control/TestControl.xaml", UriKind.Relative));
         style = (Style)resources["TestControlStyle"];
     }
 

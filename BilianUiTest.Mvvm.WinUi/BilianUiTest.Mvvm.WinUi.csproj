@@ -37,13 +37,24 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Bilian.Ui" Version="1.25.0" />
-    <PackageReference Include="Bilian.Ui.WinUi" Version="1.0.0" />
+    <PackageReference Include="Bilian.Ui" Version="1.26.0" />
+    <PackageReference Include="Bilian.Ui.WinUi" Version="1.1.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7175" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilianUiTest.Mvvm\BilianUiTest.Mvvm.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Custom user interaction\CustomUserInteractionExampleView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Items view\ItemsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TestControl\TestControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
   <!--

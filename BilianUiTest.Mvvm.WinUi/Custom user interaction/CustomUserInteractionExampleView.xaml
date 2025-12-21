@@ -1,0 +1,15 @@
+﻿<bv:UserControlViewWithModel x:Class="BilianUiTest.Mvvm.WinUi.CustomUserInteractionExampleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:bv="using:Bilian.Ui.WinUi"
+        xmlns:local="clr-namespace:BilianUiTest.Mvvm.WinUi"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance local:CustomUserInteractionExampleView, d:IsDesignTimeCreatable=False}">
+
+    <StackPanel>
+        <Button Content="Go crazy" Command="{Binding Path=Model.GoCrazyCommand}"/>
+        <Border Background="{Binding Path=PanelBackground}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200" Margin="0,20,0,0"/>
+    </StackPanel>
+    
+</bv:UserControlViewWithModel>

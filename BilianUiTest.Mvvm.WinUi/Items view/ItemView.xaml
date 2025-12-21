@@ -1,0 +1,32 @@
+﻿<bv:UserControlViewWithModel x:Class="BilianUiTest.Mvvm.WinUi.ItemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:bv="using:Bilian.Ui.WinUi"
+    xmlns:local="clr-namespace:BilianUiTest.Mvvm.WinUi"
+    mc:Ignorable="d" d:DataContext="{d:DesignInstance local:ItemView, d:IsDesignTimeCreatable=False}">
+
+    <Border BorderBrush="LightGray" BorderThickness="2" Margin="0,0,0,20" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="500">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Type text"/>
+                    <TextBox VerticalAlignment="Top" Text="{Binding Path=Model.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                    <Button Content="Submit" Command="{Binding Path=Model.SubmitCommand}"/>
+                    <Button Content="Remove" Command="{Binding Path=Model.RemoveCommand}" Margin="10,0,0,0"/>
+                </StackPanel>
+            </Grid>
+            <TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap" FontStyle="Italic" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Border>
+</bv:UserControlViewWithModel>

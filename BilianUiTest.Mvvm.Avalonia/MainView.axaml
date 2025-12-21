@@ -1,39 +1,55 @@
 <bv:WindowViewWithModel x:Class="BilianUiTest.Mvvm.Avalonia.MainView" x:TypeArguments="bUiTest:MainViewModel"
-	xmlns="https://github.com/avaloniaui"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:bv="clr-namespace:Bilian.Ui.Avalonia;assembly=Bilian.Ui.Avalonia"
-	xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
-	xmlns:local="clr-namespace:BilianUiTest.Mvvm.Avalonia"
-	mc:Ignorable="d" x:DataType="local:MainView"
-	Title="Bilian UI Avalonia examples" WindowState="Maximized" ShowInTaskbar="True"
-	x:Name="thisView">
-	
+						xmlns="https://github.com/avaloniaui"
+						xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+						xmlns:bv="clr-namespace:Bilian.Ui.Avalonia;assembly=Bilian.Ui.Avalonia"
+						xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
+						xmlns:local="clr-namespace:BilianUiTest.Mvvm.Avalonia"
+						mc:Ignorable="d" x:DataType="local:MainView"
+						Title="Bilian UI Avalonia examples" WindowState="Maximized" ShowInTaskbar="True"
+						x:Name="thisView">
+
 	<StackPanel>
 		<TabControl>
-			<TabItem Header="User controls">
+			<TabItem Header="Common">
+            <StackPanel Orientation="Vertical" Margin="30,30,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Information" Command="{Binding Path=Model.ShowInformationCommand}"/>
+                    <Button Content="Information with confirmation" Command="{Binding Path=Model.ShowInformationWithConfirmationCommand}" Margin="10,0,0,0"/>
+                    <Button Content="Information with required confirmation" Command="{Binding Path=Model.ShowInformationWithRequiredConfirmationCommand}" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button Content="Warning" Command="{Binding Path=Model.ShowWarningCommand}"/>
+                    <Button Content="Warning with confirmation" Command="{Binding Path=Model.ShowWarningWithConfirmationCommand}" Margin="10,0,0,0"/>
+                    <Button Content="Warning with required confirmation" Command="{Binding Path=Model.ShowWarningWithRequiredConfirmationCommand}" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button Content="Error" Command="{Binding Path=Model.ShowErrorCommand}"/>
+                    <Button Content="Error with confirmation" Command="{Binding Path=Model.ShowErrorWithConfirmationCommand}" Margin="10,0,0,0"/>
+                    <Button Content="Error with required confirmation" Command="{Binding Path=Model.ShowErrorWithRequiredConfirmationCommand}" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <Button Content="Query" Command="{Binding Path=Model.QueryUserCommand}" Margin="0,20,0,0"/>
+                <Button Content="Pick file" Command="{Binding Path=Model.PickFileCommand}" Margin="0,20,0,0"/>
+                <Button Content="Set file name file" Command="{Binding Path=Model.SetFileNameCommand}" Margin="0,20,0,0"/>
+                <Button Content="Pick folder" Command="{Binding Path=Model.PickFolderCommand}" Margin="0,20,0,0"/>
+            </StackPanel>
+			</TabItem>
+
+			<TabItem Header="Dialogs">
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,30,0,0">
+					<Button Content="Form window" Command="{Binding Path=Model.OpenDialogCommand}"/>
+					<Button Content="Modal dialog" Command="{Binding Path=Model.OpenModalDialogCommand}" Margin="20,0,0,0"/>
+				</StackPanel>
+			</TabItem>
+
+			<TabItem Header="User control">
 				<local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, ElementName=thisView}" Margin="30,30,0,0"/>
 			</TabItem>
 
-			<TabItem Header="Windows">
-				<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,30,0,0">
-					<Button Content="Form window" Command="{Binding Path=Model.OpenDialogCommand}"/>
-					<Button Content="Form dialog" Command="{Binding Path=Model.OpenModalDialogCommand}" Margin="20,0,0,0"/>
-				</StackPanel>
-			</TabItem>
-
-			<TabItem Header="Advanced">
-				<StackPanel Orientation="Horizontal" Margin="30,30,0,0">
-					<Button Content="Message" Command="{Binding Path=Model.ShowMessageCommand}"/>
-					<Button Content="Error" Command="{Binding Path=Model.ShowErrorCommand}" Margin="20,0,0,0"/>
-					<Button Content="Query" Command="{Binding Path=Model.QueryUserCommand}" Margin="20,0,0,0"/>
-					<Button Content="Pick file" Command="{Binding Path=Model.PickFileCommand}" Margin="20,0,0,0"/>
-					<Button Content="Set file name file" Command="{Binding Path=Model.SetFileNameCommand}" Margin="20,0,0,0"/>
-					<Button Content="Pick folder" Command="{Binding Path=Model.PickFolderCommand}" Margin="20,0,0,0"/>
-				</StackPanel>
-			</TabItem>
-			
 			<TabItem Header="Items">
 				<local:ItemsView Model="{Binding Path=Model.ItemsViewModel, ElementName=thisView}" Margin="30,30,0,0"/>
 			</TabItem>
@@ -42,7 +58,7 @@
 				<local:CustomUserInteractionExampleView Model="{Binding Path=Model.CustomUserInteractionExampleViewModel, ElementName=thisView}" Margin="30,30,0,0"/>
 			</TabItem>
 
-			<TabItem Header="ViewLoader">
+			<TabItem Header="Lazy loaded view">
 				<bv:ViewLoader GetViewModel="{Binding Path=Model.GetLazyLoadedViewModel}" Margin="30,30,0,0"/>
 			</TabItem>
 
@@ -50,8 +66,8 @@
 				<Button Content="Action" Command="{Binding Path=Model.DoActionCommand}" Margin="30,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 			</TabItem>
 
-			<TabItem Header="Content control view">
-				<local:TestControl Title="{Binding Path=Model.ValueElementTitle}" Model="{Binding Path=Model.CustomControlViewModel}" Margin="30,30,0,0"/>
+			<TabItem Header="Templated control">
+				<local:TestControl Title="{Binding Path=Model.ValueElementTitle}" Model="{Binding Path=Model.ValueViewModel}" Margin="30,30,0,0"/>
 			</TabItem>
 		</TabControl>
 	</StackPanel>

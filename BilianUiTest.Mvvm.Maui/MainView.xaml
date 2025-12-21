@@ -13,26 +13,42 @@
     x:Name="thisView">
 
     <umat:TabView>
-        <umat:TabItem Title="User controls">
-            <local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, Source={x:Reference Name=thisView}}" Margin="10,30"/>
+        <umat:TabItem Title="Common">
+            <StackLayout Orientation="Vertical" Margin="30,30,0,0" VerticalOptions="Start" Spacing="30">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Button Text="Information" Command="{Binding Path=Model.ShowInformationCommand}"/>
+                    <Button Text="Information with confirmation" Command="{Binding Path=Model.ShowInformationWithConfirmationCommand}"/>
+                    <Button Text="Information with required confirmation" Command="{Binding Path=Model.ShowInformationWithRequiredConfirmationCommand}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Button Text="Warning" Command="{Binding Path=Model.ShowWarningCommand}"/>
+                    <Button Text="Warning with confirmation" Command="{Binding Path=Model.ShowWarningWithConfirmationCommand}"/>
+                    <Button Text="Warning with required confirmation" Command="{Binding Path=Model.ShowWarningWithRequiredConfirmationCommand}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Button Text="Error" Command="{Binding Path=Model.ShowErrorCommand}"/>
+                    <Button Text="Error with confirmation" Command="{Binding Path=Model.ShowErrorWithConfirmationCommand}"/>
+                    <Button Text="Error with required confirmation" Command="{Binding Path=Model.ShowErrorWithRequiredConfirmationCommand}"/>
+                </StackLayout>
+
+                <Button Text="Query" Command="{Binding Path=Model.QueryUserCommand}"/>
+                <!--<Button Text="Pick file" Command="{Binding Path=Model.PickFileCommand}"/>
+                <Button Text="Set file name file" Command="{Binding Path=Model.SetFileNameCommand}"/>
+                <Button Text="Pick folder" Command="{Binding Path=Model.PickFolderCommand}"/>-->
+            </StackLayout>
         </umat:TabItem>
 
         <umat:TabItem Title="Dialogs">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start" Margin="30,30,0,0" Spacing="20">
                 <!--<Button Text="Form window" Command="{Binding Path=Model.OpenDialogCommand}"/>-->
-                <Button Text="Form dialog" Command="{Binding Path=Model.OpenModalDialogCommand}"/>
+                <Button Text="Modal dialog" Command="{Binding Path=Model.OpenModalDialogCommand}"/>
             </StackLayout>
         </umat:TabItem>
 
-        <umat:TabItem Title="Advanced">
-            <StackLayout Orientation="Horizontal" Margin="30,30,0,0" VerticalOptions="Start" Spacing="20">
-                <Button Text="Message" Command="{Binding Path=Model.ShowMessageCommand}"/>
-                <Button Text="Error" Command="{Binding Path=Model.ShowErrorCommand}"/>
-                <Button Text="Query" Command="{Binding Path=Model.QueryUserCommand}"/>
-                <!--<Button Text="Pick file" Command="{Binding Path=Model.PickFileCommand}" Margin="20,0,0,0"/>
-                <Button Text="Set file name file" Command="{Binding Path=Model.SetFileNameCommand}" Margin="20,0,0,0"/>
-                <Button Text="Pick folder" Command="{Binding Path=Model.PickFolderCommand}" Margin="20,0,0,0"/>-->
-            </StackLayout>
+        <umat:TabItem Title="User control">
+            <local:ExampleUserControlView Model="{Binding Path=Model.ExampleControlViewModel, Source={x:Reference Name=thisView}}" Margin="10,30"/>
         </umat:TabItem>
 
         <umat:TabItem Title="Items">
@@ -43,7 +59,7 @@
             <local:CustomUserInteractionExampleView Model="{Binding Path=Model.CustomUserInteractionExampleViewModel, Source={x:Reference Name=thisView}}" Margin="30,30,0,0"/>
         </umat:TabItem>
 
-        <umat:TabItem Title="ViewLoader">
+        <umat:TabItem Title="Lazy loaded view">
             <bv:ViewLoader GetViewModel="{Binding Path=Model.GetLazyLoadedViewModel}" Margin="30,30,0,0"/>
         </umat:TabItem>
 

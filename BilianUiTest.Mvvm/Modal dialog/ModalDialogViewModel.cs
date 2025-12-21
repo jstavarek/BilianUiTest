@@ -11,38 +11,33 @@ public class ModalDialogViewModel : EnhancedViewModel
 
             field = value;
             NotifyPropertyChanged(nameof(Text));
-            ConfirmCommand.ChangeCanExecute();
+            SubmitCommand.ChangeCanExecute();
         }
     }
 
-    public Command ConfirmCommand { get; }
+    public Command SubmitCommand { get; }
     public Command CancelCommand { get; }
 
     private readonly Action<string> onTextEnteredAction;
 
-    private bool textHasBeenConfirmed;
+    private bool textConfirmed;
 
     public ModalDialogViewModel(Action<string> onTextEnteredAction)
     {
         this.onTextEnteredAction = onTextEnteredAction;
-        ConfirmCommand = new Command(Confirm, () => string.IsNullOrEmpty(Text) == false);
-        CancelCommand = new Command(HideView);
-    }
-
-    public void Confirm()
-    {
-        ShowInformation($"Thank you for your text!", "Confirmation",
-            () =>
+        SubmitCommand = new Command(() =>
             {
-                textHasBeenConfirmed = true;
+                textConfirmed = true;
                 HideView();
-            });
+            }
+            , () => string.IsNullOrEmpty(Text) == false);
+        CancelCommand = new Command(HideView);
     }
 
     public override void OnViewDisappeared()
     {
         base.OnViewDisappeared();
-        if (textHasBeenConfirmed)
+        if (textConfirmed)
             onTextEnteredAction?.Invoke(Text!);
     }
 }

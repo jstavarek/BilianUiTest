@@ -1,6 +1,6 @@
 namespace BilianUiTest.Mvvm.WinUi;
 
-public partial class MainView : WindowViewWithModel
+public partial class MainView
 {
     public MainView(MainViewModel model) : base(model)
     {

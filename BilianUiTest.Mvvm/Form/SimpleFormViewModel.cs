@@ -13,15 +13,15 @@ public class SimpleFormViewModel : EnhancedViewModel
 
             field = value;
             NotifyPropertyChanged(nameof(Text));
-            ConfirmCommand.ChangeCanExecute();
+            SubmitCommand.ChangeCanExecute();
         }
     }
 
-    public Command ConfirmCommand { get; }
+    public Command SubmitCommand { get; }
 
     public SimpleFormViewModel()
     {
-        ConfirmCommand = new Command(() => ShowInformation($"You entered: {Text}", "Confirmation", null), () => string.IsNullOrEmpty(Text) == false);
+        SubmitCommand = new Command(() => ShowInformation($"You entered: {Text}", "Confirmation"), () => string.IsNullOrEmpty(Text) == false);
     }
 
     public override void OnViewAppeared()

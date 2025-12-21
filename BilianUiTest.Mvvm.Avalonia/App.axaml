@@ -6,6 +6,6 @@
 
 	<Application.Styles>
 		<FluentTheme />
-		<StyleInclude Source="/TestControl/TestControl.axaml"/>
+		<StyleInclude Source="/Templated control/TestControl.axaml"/>
 	</Application.Styles>
 </Application>

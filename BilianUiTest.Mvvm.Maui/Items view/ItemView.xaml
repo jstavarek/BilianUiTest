@@ -19,16 +19,16 @@
 
                 <VerticalStackLayout Grid.Column="0">
                     <Label Text="Type text"/>
-                    <Entry Text="{Binding Path=Model.Text}" VerticalOptions="Start" ReturnCommand="{Binding Path=Model.ConfirmCommand}"/>
+                    <Entry Text="{Binding Path=Model.Text, Mode=TwoWay}" VerticalOptions="Start" ReturnCommand="{Binding Path=Model.SubmitCommand}"/>
                 </VerticalStackLayout>
 
                 <HorizontalStackLayout Grid.Column="1" Margin="10,0,0,0" VerticalOptions="End">
-                    <Button Text="Apply" Command="{Binding Path=Model.ConfirmCommand}"/>
+                    <Button Text="Submit" Command="{Binding Path=Model.SubmitCommand}"/>
                     <Button Text="Remove" Command="{Binding Path=Model.RemoveCommand}" Margin="10,0,0,0"/>
                 </HorizontalStackLayout>
             </Grid>
         
-            <Label Text="{Binding Path=Message}" TextColor="Red" Margin="0,10,0,0"/>
+            <Label Text="{Binding Path=Message}" FontAttributes="Italic" Margin="0,10,0,0"/>
         </VerticalStackLayout>
     </Border>
 </bv:ContentViewViewWithModel>

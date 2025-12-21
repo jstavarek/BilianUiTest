@@ -8,7 +8,7 @@
 	xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
 	xmlns:local="clr-namespace:BilianUiTest.Mvvm.Avalonia"
 	mc:Ignorable="d" x:DataType="local:NonModalWindowView"
-	Title="Non modal window" SizeToContent="WidthAndHeight" CanResize="False" ShowInTaskbar="False" CanMinimize="False">
+	Title="Form window" SizeToContent="WidthAndHeight" CanResize="False" ShowInTaskbar="False" CanMinimize="False">
 	
 	<i:Interaction.Behaviors>
 		<local:ElementFocusBehaviour/>
@@ -17,6 +17,6 @@
 	<StackPanel HorizontalAlignment="Left" Width="300" IsTabStop="False" Margin="20">
 		<Label Content="Type text" IsTabStop="False"/>
 		<TextBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Model.Text}"/>
-		<Button Content="Ok" Command="{Binding Path=Model.ConfirmCommand}" Margin="0,20,0,0" HorizontalAlignment="Right" IsDefault="True"/>
+		<Button Content="OK" Command="{Binding Path=Model.SubmitCommand}" Margin="0,20,0,0" HorizontalAlignment="Right" IsDefault="True"/>
 	</StackPanel>
 </bv:WindowViewWithModel>

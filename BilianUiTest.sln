@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11217.181 d18.0
+VisualStudioVersion = 18.0.11217.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilianUiTest.Mvvm", "BilianUiTest.Mvvm\BilianUiTest.Mvvm.csproj", "{4282E87D-7CC9-95C2-FF7E-0A336A25A597}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM Example", "MVVM Example", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM example projects", "MVVM example projects", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Not MVVM example", "Not MVVM example", "{4A39FB8B-A241-4E96-AB8C-8EFB015055A0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Not MVVM example projects", "Not MVVM example projects", "{4A39FB8B-A241-4E96-AB8C-8EFB015055A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilianUiTest.Mvvm.Avalonia", "BilianUiTest.Mvvm.Avalonia\BilianUiTest.Mvvm.Avalonia.csproj", "{63895C45-BD14-154F-5CEC-1F8C9253108E}"
 EndProject

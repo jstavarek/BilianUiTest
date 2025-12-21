@@ -4,7 +4,7 @@ public partial class NonModalWindowView
 {
     public NonModalWindowView()
     {
-        ConfirmCommand = new Command(Confirm, () => string.IsNullOrEmpty(Text) == false);
+        SubmitCommand = new Command(Submit, () => string.IsNullOrEmpty(Text) == false);
 
         DataContext = this;
         InitializeComponent();
@@ -19,14 +19,14 @@ public partial class NonModalWindowView
 
             field = value;
             NotifyPropertyChanged(nameof(Text));
-            ConfirmCommand.ChangeCanExecute();
+            SubmitCommand.ChangeCanExecute();
         }
     }
 
-    public Command ConfirmCommand { get; }
+    public Command SubmitCommand { get; }
 
-    public void Confirm()
+    public void Submit()
     {
-        userInteractionsInvoker.ShowInformation($"Thank you for your text!", "Confirmation", userInteractionsInvoker.HideView);
+        userInteractionsInvoker.ShowConfirmedInformation($"Thank you for your text!", "Confirmation", userInteractionsInvoker.HideView);
     }
 }

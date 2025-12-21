@@ -15,10 +15,10 @@
     </behaviors:Interaction.Behaviors>
 
     <StackPanel HorizontalAlignment="Left" Width="300" Margin="20">
-        <Label Content="Type text"/>
-        <TextBox Text="{Binding Path=Model.Text, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <TextBlock Text="Type text"/>
+        <TextBox Text="{Binding Path=Model.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
-            <Button Content="Ok" Command="{bv:CommandBinding Path=Model.ConfirmCommand}"  IsDefault="True"/>
+            <Button Content="OK" Command="{bv:CommandBinding Path=Model.SubmitCommand}"  IsDefault="True"/>
             <Button Content="Cancel" Command="{bv:CommandBinding Path=Model.CancelCommand}" Margin="20,0,0,0" IsCancel="True"/>
         </StackPanel>
     </StackPanel>

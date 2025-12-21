@@ -1,28 +1,44 @@
 ﻿<bv:WindowView x:Class="BilianUiTest.Wpf.MainView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf"
-        xmlns:local="clr-namespace:BilianUiTest.Wpf"
-        Title="Bilian.UI WPF examples" Height="450" Width="800"
-        mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainView, d:IsDesignTimeCreatable=False}">
-    
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bv="clr-namespace:Bilian.Ui.Wpf;assembly=Bilian.Ui.Wpf"
+    xmlns:local="clr-namespace:BilianUiTest.Wpf"
+    Title="Bilian.UI WPF examples" WindowState="Maximized" ShowInTaskbar="True"
+    mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainView, d:IsDesignTimeCreatable=False}">
+
     <TabControl>
+        <TabItem Header="Common">
+            <StackPanel Orientation="Vertical" Margin="30,30,0,0" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Information" Command="{bv:CommandBinding Path=ShowInformationCommand}"/>
+                    <Button Content="Information with confirmation" Command="{bv:CommandBinding Path=ShowInformationWithConfirmationCommand}" Margin="10,0,0,0"/>
+                    <Button Content="Information with required confirmation" Command="{bv:CommandBinding Path=ShowInformationWithRequiredConfirmationCommand}" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button Content="Warning" Command="{bv:CommandBinding Path=ShowWarningCommand}"/>
+                    <Button Content="Warning with confirmation" Command="{bv:CommandBinding Path=ShowWarningWithConfirmationCommand}" Margin="10,0,0,0"/>
+                    <Button Content="Warning with required confirmation" Command="{bv:CommandBinding Path=ShowWarningWithRequiredConfirmationCommand}" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button Content="Error" Command="{bv:CommandBinding Path=ShowErrorCommand}"/>
+                    <Button Content="Error with confirmation" Command="{bv:CommandBinding Path=ShowErrorWithConfirmationCommand}" Margin="10,0,0,0"/>
+                    <Button Content="Error with required confirmation" Command="{bv:CommandBinding Path=ShowErrorWithRequiredConfirmationCommand}" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <Button Content="Query" Command="{bv:CommandBinding Path=QueryUserCommand}" Margin="0,20,0,0"/>
+                <Button Content="Pick file" Command="{bv:CommandBinding Path=PickFileCommand}" Margin="0,20,0,0"/>
+                <Button Content="Set file name file" Command="{bv:CommandBinding Path=SetFileNameCommand}" Margin="0,20,0,0"/>
+                <Button Content="Pick folder" Command="{bv:CommandBinding Path=PickFolderCommand}" Margin="0,20,0,0"/>
+            </StackPanel>
+        </TabItem>
+
         <TabItem Header="Dialogs">
             <StackPanel Orientation="Horizontal" Margin="30,30,0,0" VerticalAlignment="Top">
                 <Button Content="Form window" Command="{bv:CommandBinding Path=OpenDialogCommand}"/>
-            </StackPanel>
-        </TabItem>
-        
-        <TabItem Header="Advanced">
-            <StackPanel Orientation="Horizontal" Margin="30,30,0,0" VerticalAlignment="Top">
-                <Button Content="Message" Command="{bv:CommandBinding Path=ShowMessageCommand}"/>
-                <Button Content="Error" Command="{bv:CommandBinding Path=ShowErrorCommand}" Margin="20,0,0,0"/>
-                <Button Content="Query" Command="{bv:CommandBinding Path=QueryUserCommand}" Margin="20,0,0,0"/>
-                <Button Content="Pick file" Command="{bv:CommandBinding Path=PickFileCommand}" Margin="20,0,0,0"/>
-                <Button Content="Set file name file" Command="{bv:CommandBinding Path=SetFileNameCommand}" Margin="20,0,0,0"/>
-                <Button Content="Pick folder" Command="{bv:CommandBinding Path=PickFolderCommand}" Margin="20,0,0,0"/>
             </StackPanel>
         </TabItem>
     </TabControl>

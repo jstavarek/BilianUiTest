@@ -12,16 +12,16 @@
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="500">
             <DockPanel LastChildFill="True">
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Bottom">
-                    <Button Content="Apply" Command="{bv:CommandBinding Path=Model.ConfirmCommand}"/>
+                    <Button Content="Submit" Command="{bv:CommandBinding Path=Model.SubmitCommand}"/>
                     <Button Content="Remove" Command="{bv:CommandBinding Path=Model.RemoveCommand}" Margin="10,0,0,0"/>
                 </StackPanel>
 
                 <StackPanel>
                     <Label Content="Type text"/>
-                    <TextBox VerticalAlignment="Top" Text="{Binding Path=Model.Text, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox VerticalAlignment="Top" Text="{Binding Path=Model.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </DockPanel>
-            <TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap" Foreground="Red" Margin="0,10,0,0"/>
+            <TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap" FontStyle="Italic" Margin="0,10,0,0"/>
         </StackPanel>
     </Border>
 </bv:UserControlViewWithModel>

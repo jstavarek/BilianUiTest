@@ -5,11 +5,14 @@ namespace BilianUiTest.Mvvm.Avalonia;
 
 public partial class App : Application
 {
+    public App()
+    {
+        Core.UserInteractionsProviderClass = typeof(CommonUserInteractionsProvider);
+    }
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
-
-        Core.UserInteractionsProviderClass = typeof(CommonUserInteractionsProvider);
 
         ViewCollection viewCollection = new();
         viewCollection.Add<MainViewModel, MainView>();
@@ -24,7 +27,8 @@ public partial class App : Application
     {
         base.OnFrameworkInitializationCompleted();
 
-        IView mainView = Core.ViewBuilder.BuildView(new MainViewModel());
+        var mainView = Core.ViewBuilder.BuildView(new MainViewModel());
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             desktop.MainWindow = (Window)mainView;
 

@@ -2,9 +2,6 @@
 
 public partial class App : Application
 {
-    private WindowView? _window;
-
-    /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
@@ -13,6 +10,14 @@ public partial class App : Application
         InitializeComponent();
 
         Core.UserInteractionsProviderClass = typeof(CommonUserInteractionsProvider);
+
+        ViewCollection viewCollection = new();
+        viewCollection.AddNonGeneric<MainViewModel, MainView>();
+        viewCollection.AddNonGeneric<DialogViewModel, NonModalWindowView>();
+        viewCollection.AddNonGeneric<ModalDialogViewModel, ModalDialogView>();
+        viewCollection.AddNonGeneric<ItemViewModel, ItemView>();
+        viewCollection.AddNonGeneric<LazyLoadedViewModel, LazyLoadedView>();
+        Core.ViewBuilder.RegisterViews(viewCollection);
     }
 
     /// <summary>
@@ -21,7 +26,7 @@ public partial class App : Application
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        _window = new MainView(new MainViewModel());
-        _window.Appear(null);
+        var mainView = Core.ViewBuilder.BuildView(new MainViewModel());
+        mainView.Appear(null);
     }
 }

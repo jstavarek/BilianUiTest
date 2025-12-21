@@ -28,7 +28,7 @@ public partial class App
     {
         base.OnStartup(e);
 
-        IView mainView = Core.ViewBuilder.BuildView(new MainViewModel());
+        var mainView = Core.ViewBuilder.BuildView(new MainViewModel());
         MainWindow = (Window)mainView;
         mainView.Appear(null);
     }

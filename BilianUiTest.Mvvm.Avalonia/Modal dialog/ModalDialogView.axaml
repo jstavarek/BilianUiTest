@@ -19,7 +19,7 @@
 		<Label Content="Type text" IsTabStop="False"/>
 		<TextBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Text="{Binding Path=Model.Text}"/>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
-			<Button Content="Ok" Command="{Binding Path=Model.ConfirmCommand}" IsDefault="True" MinWidth="40"/>
+			<Button Content="Ok" Command="{Binding Path=Model.SubmitCommand}" IsDefault="True" MinWidth="40"/>
 			<Button Content="Cancel" Command="{Binding Path=Model.CancelCommand}" Margin="20,0,0,0" IsCancel="True"/>
 		</StackPanel>
 	</StackPanel>

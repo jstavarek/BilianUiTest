@@ -1,0 +1,27 @@
+﻿<bv:ContentDialogViewWithModel x:Class="BilianUiTest.Mvvm.WinUi.ModalDialogView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:bv="using:Bilian.Ui.WinUi"
+    xmlns:local="clr-namespace:BilianUiTest.Mvvm.WinUi"
+    Title="Modal dialog"
+    mc:Ignorable="d" d:DataContext="{d:DesignInstance local:ModalDialogView, d:IsDesignTimeCreatable=False}">
+    <!--Title="Modal dialog" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" ShowInTaskbar="False">-->
+
+    <!--<behaviors:Interaction.Behaviors>
+        <local:ElementFocusBehaviour/>
+    </behaviors:Interaction.Behaviors>-->
+
+    <StackPanel HorizontalAlignment="Left" Width="300">
+        <TextBlock Text="Type text"/>
+        <TextBox Text="{Binding Path=Model.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <!--<Button Content="OK" Command="{Binding Path=Model.SubmitCommand}" IsDefault="True"/>-->
+            <Button Content="OK" Command="{Binding Path=Model.SubmitCommand}"/>
+            <!--<Button Content="Cancel" Command="{Binding Path=Model.CancelCommand}" Margin="20,0,0,0" IsCancel="True"/>-->
+            <Button Content="Cancel" Command="{Binding Path=Model.CancelCommand}" Margin="20,0,0,0"/>
+        </StackPanel>
+    </StackPanel>
+</bv:ContentDialogViewWithModel>

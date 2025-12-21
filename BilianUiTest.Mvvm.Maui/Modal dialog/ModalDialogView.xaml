@@ -1,38 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<local:PopupPageViewWithModel x:Class="BilianUiTest.Mvvm.Maui.ModalDialogView" x:TypeArguments="bUiTest:ModalDialogViewModel"
+<bv:PopupViewWithModel x:Class="BilianUiTest.Mvvm.Maui.ModalDialogView" x:TypeArguments="bUiTest:ModalDialogViewModel"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-    xmlns:umat="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
     xmlns:bv="clr-namespace:Bilian.Ui.Maui;assembly=Bilian.Ui.Maui"
     xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
     xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui"
-    Title="Modal dialog"
+    WidthRequest="300" Margin="10"
     x:DataType="local:ModalDialogView">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Border Grid.Column="1" Grid.Row="1" Margin="10" Padding="20" BackgroundColor="White" StrokeThickness="0" WidthRequest="300">
-            <StackLayout>
-                <Label Text="Type text"/>
-                <Entry Text="{Binding Path=Model.Text}" HorizontalOptions="Fill" VerticalOptions="Start" ReturnCommand="{Binding Path=Model.ConfirmCommand}" Margin="0,5,0,0"/>
-                <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="End">
-                    <Button Text="OK" Command="{Binding Path=Model.ConfirmCommand}"/>
-                    <Button Text="Cancel" Command="{Binding Path=Model.CancelCommand}" Margin="20,0,0,0" />
-                </StackLayout>
-            </StackLayout>
-        </Border>
-    </Grid>
-</local:PopupPageViewWithModel>
+    <StackLayout>
+        <Label Text="Modal dialog" FontSize="Subtitle" Margin="0,0,0,10"/>
+        <Label Text="Type text"/>
+        <Entry Text="{Binding Path=Model.Text}" HorizontalOptions="Fill" VerticalOptions="Start" ReturnCommand="{Binding Path=Model.SubmitCommand}" Margin="0,5,0,0"/>
+        <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="End">
+            <Button Text="OK" Command="{Binding Path=Model.SubmitCommand}"/>
+            <Button Text="Cancel" Command="{Binding Path=Model.CancelCommand}" Margin="20,0,0,0" />
+        </StackLayout>
+    </StackLayout>
+</bv:PopupViewWithModel>
+    
