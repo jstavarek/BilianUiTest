@@ -9,7 +9,7 @@
     xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui"
     x:DataType="local:MiscellaneousView">
 
-    <StackLayout WidthRequest="400" HorizontalOptions="Start" Spacing="5">
+    <StackLayout Spacing="5">
         <Label Text="Enter text:"/>
         <Entry Text="{Binding Path=Model.InputText}" ReturnCommand="{Binding Path=Model.ProcessTextCommand}"/>
         <Button Text="Process" Command="{Binding Path=Model.ProcessTextCommand}" HorizontalOptions="End"/>
