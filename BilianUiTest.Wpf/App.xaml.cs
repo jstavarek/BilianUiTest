@@ -12,7 +12,7 @@ public partial class App
         base.OnStartup(e);
 
         var mainView = new MainView();
-        mainView.Appear(null);
+        mainView.Activate();
     }
 }
 

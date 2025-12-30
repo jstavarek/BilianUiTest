@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bv:ContentViewViewWithModel x:Class="BilianUiTest.Mvvm.Maui.MiscellaneousView" x:TypeArguments="bUiTest:MiscellaneousViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:bv="clr-namespace:Bilian.Ui.Maui;assembly=Bilian.Ui.Maui"
+    xmlns:bUiTest="clr-namespace:BilianUiTest.Mvvm;assembly=BilianUiTest.Mvvm"
+    xmlns:local="clr-namespace:BilianUiTest.Mvvm.Maui"
+    x:DataType="local:MiscellaneousView">
+
+    <StackLayout WidthRequest="400" HorizontalOptions="Start" Spacing="5">
+        <Label Text="Enter text:"/>
+        <Entry Text="{Binding Path=Model.InputText}" ReturnCommand="{Binding Path=Model.ProcessTextCommand}"/>
+        <Button Text="Process" Command="{Binding Path=Model.ProcessTextCommand}" HorizontalOptions="End"/>
+        <Label Text="Result:"/>
+        <Label Text="{Binding Path=Model.Result}" FontAttributes="Bold"/>
+    </StackLayout>
+</bv:ContentViewViewWithModel>

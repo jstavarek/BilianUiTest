@@ -10,7 +10,6 @@ public class SimpleFormViewModel : EnhancedViewModel
         set
         {
             if (value == field) return;
-
             field = value;
             NotifyPropertyChanged(nameof(Text));
             SubmitCommand.ChangeCanExecute();
@@ -24,15 +23,15 @@ public class SimpleFormViewModel : EnhancedViewModel
         SubmitCommand = new Command(() => ShowInformation($"You entered: {Text}", "Confirmation"), () => string.IsNullOrEmpty(Text) == false);
     }
 
-    public override void OnViewAppeared()
+    public override void OnViewActivated()
     {
-        base.OnViewAppeared();
-        Debug.WriteLine($"{nameof(OnViewAppeared)} {GetType().Name}");
+        base.OnViewActivated();
+        Debug.WriteLine($"{nameof(OnViewActivated)} {GetType().Name}");
     }
 
-    public override void OnViewDisappeared()
+    public override void OnViewDeactivated()
     {
-        base.OnViewDisappeared();
-        Debug.WriteLine($"{nameof(OnViewDisappeared)} {GetType().Name}");
+        base.OnViewDeactivated();
+        Debug.WriteLine($"{nameof(OnViewDeactivated)} {GetType().Name}");
     }
 }

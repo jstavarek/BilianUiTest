@@ -34,9 +34,9 @@ public class ModalDialogViewModel : EnhancedViewModel
         CancelCommand = new Command(HideView);
     }
 
-    public override void OnViewDisappeared()
+    public override void OnViewDeactivated()
     {
-        base.OnViewDisappeared();
+        base.OnViewDeactivated();
         if (textConfirmed)
             onTextEnteredAction?.Invoke(Text!);
     }

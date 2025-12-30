@@ -16,10 +16,10 @@ public partial class ItemsView
     {
         if (view is ItemView itemView)
         {
-            itemView.Appeared += (sender, args) => itemsStackPanel.Children.Add(itemView);
-            itemView.Disappeared += (sender, args) => itemsStackPanel.Children.Remove(itemView);
+            itemView.Activated += (sender, args) => itemsStackPanel.Children.Add(itemView);
+            itemView.Deactivated += (sender, args) => itemsStackPanel.Children.Remove(itemView);
         }
 
-        view.Appear(this);
+        view.Activate(this);
     }
 }

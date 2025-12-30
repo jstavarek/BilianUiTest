@@ -4,9 +4,9 @@ public class LazyLoadedViewModel : EnhancedViewModel
 {
     bool messageHasBeenDisplayed;
 
-    public override void OnViewAppeared()
+    public override void OnViewActivated()
     {
-        base.OnViewAppeared();
+        base.OnViewActivated();
 
         if (messageHasBeenDisplayed == false)
             ShowInformation("View instantiated now!", "Lazy loaded view");

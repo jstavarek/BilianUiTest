@@ -18,15 +18,15 @@ public class CustomUserInteractionExampleViewModel : EnhancedViewModel
         UserInteractionsInvoker?.Invoke(new GoingCrazy(random.Next()));
     }
 
-    public override void OnViewAppeared()
+    public override void OnViewActivated()
     {
-        base.OnViewAppeared();
-        Debug.WriteLine($"{nameof(OnViewAppeared)} {GetType().Name}");
+        base.OnViewActivated();
+        Debug.WriteLine($"{nameof(OnViewActivated)} {GetType().Name}");
     }
 
-    public override void OnViewDisappeared()
+    public override void OnViewDeactivated()
     {
-        base.OnViewDisappeared();
-        Debug.WriteLine($"{nameof(OnViewDisappeared)} {GetType().Name}");
+        base.OnViewDeactivated();
+        Debug.WriteLine($"{nameof(OnViewDeactivated)} {GetType().Name}");
     }
 }

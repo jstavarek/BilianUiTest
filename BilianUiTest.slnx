@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/MVVM example projects/">
+    <Project Path="BilianUiTest.Mvvm.Avalonia/BilianUiTest.Mvvm.Avalonia.csproj" />
+    <Project Path="BilianUiTest.Mvvm.Maui/BilianUiTest.Mvvm.Maui.csproj">
+      <Deploy />
+    </Project>
+    <Project Path="BilianUiTest.Mvvm.Tests/BilianUiTest.Mvvm.Tests.csproj" />
+    <Project Path="BilianUiTest.Mvvm.WinUi/BilianUiTest.Mvvm.WinUi.csproj">
+      <Platform Project="x64" />
+      <Deploy />
+    </Project>
+    <Project Path="BilianUiTest.Mvvm.Wpf/BilianUiTest.Mvvm.Wpf.csproj" />
+    <Project Path="BilianUiTest.Mvvm/BilianUiTest.Mvvm.csproj" />
+  </Folder>
+  <Folder Name="/Not MVVM example projects/">
+    <Project Path="BilianUiTest.Wpf/BilianUiTest.Wpf.csproj" />
+  </Folder>
+</Solution>

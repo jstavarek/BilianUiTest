@@ -30,6 +30,6 @@ public partial class App
 
         var mainView = Core.ViewBuilder.BuildView(new MainViewModel());
         MainWindow = (Window)mainView;
-        mainView.Appear(null);
+        mainView.Activate();
     }
 }

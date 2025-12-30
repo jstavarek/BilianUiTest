@@ -16,10 +16,10 @@ public partial class ItemsView : ContentViewViewWithModel<ItemsViewModel>
     {
         if (view is ItemView itemView)
         {
-            itemView.Appeared += (sender, args) => itemsContainer.Children.Add(itemView);
-            itemView.Disappeared += (sender, args) => itemsContainer.Children.Remove(itemView);
+            itemView.Activated += (sender, args) => itemsContainer.Children.Add(itemView);
+            itemView.Deactivated += (sender, args) => itemsContainer.Children.Remove(itemView);
         }
 
-        view.Appear(this);
+        view.Activate(this);
     }
 }

@@ -28,9 +28,24 @@ public class MainViewModel : EnhancedViewModel
     public ItemsViewModel ItemsViewModel { get; }
     public CustomUserInteractionExampleViewModel CustomUserInteractionExampleViewModel { get; }
     public Func<IViewModel> GetLazyLoadedViewModel { get; }
+    public MiscellaneousViewModel MiscellaneousViewModel { get; }
 
     public string ValueElementTitle { get; } = "Animal";
     public ValueViewModel ValueViewModel { get; }
+
+    public string? Text
+    {
+        get { return field; }
+        private set
+        {
+            if (value == field) return;
+
+            field = value;
+            NotifyPropertyChanged(nameof(Text));
+        }
+    }
+
+    public Command<string> SetTextCommand { get; }
 
     public MainViewModel()
     {
@@ -53,24 +68,26 @@ public class MainViewModel : EnhancedViewModel
         OpenModalDialogCommand = new Command(OpenModalDialog);
 
         DoActionCommand = new Command(DoAction);
+        SetTextCommand = new Command<string>((text) => Text = text);
 
         ExampleControlViewModel = new SimpleFormViewModel();
         ItemsViewModel = new ItemsViewModel();
         CustomUserInteractionExampleViewModel = new CustomUserInteractionExampleViewModel();
         GetLazyLoadedViewModel = () => new LazyLoadedViewModel();
         ValueViewModel = new ValueViewModel() { Value = "Elephant" };
+        MiscellaneousViewModel = new MiscellaneousViewModel(new TextProcessor());
     }
 
-    public override void OnViewAppeared()
+    public override void OnViewActivated()
     {
-        base.OnViewAppeared();
-        Debug.WriteLine($"{nameof(OnViewAppeared)} {GetType().Name}");
+        base.OnViewActivated();
+        Debug.WriteLine($"{nameof(OnViewActivated)} {GetType().Name}");
     }
 
-    public override void OnViewDisappeared()
+    public override void OnViewDeactivated()
     {
-        base.OnViewDisappeared();
-        Debug.WriteLine($"OnViewDisappeared {GetType().Name}");
+        base.OnViewDeactivated();
+        Debug.WriteLine($"{nameof(OnViewDeactivated)} {GetType().Name}");
     }
 
     private void QueryUser()

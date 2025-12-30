@@ -27,6 +27,6 @@ public partial class App : Application
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
         var mainView = Core.ViewBuilder.BuildView(new MainViewModel());
-        mainView.Appear(null);
+        mainView.Activate();
     }
 }

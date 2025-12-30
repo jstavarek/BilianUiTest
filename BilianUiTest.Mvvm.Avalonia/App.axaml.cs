@@ -32,6 +32,6 @@ public partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             desktop.MainWindow = (Window)mainView;
 
-        mainView.Appear(null);
+        mainView.Activate();
     }
 }

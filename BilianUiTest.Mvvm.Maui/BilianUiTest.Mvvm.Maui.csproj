@@ -59,8 +59,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Bilian.Ui" Version="1.26.0" />
-		<PackageReference Include="Bilian.Ui.Maui" Version="1.12.0" />
+		<PackageReference Include="Bilian.Ui" Version="1.27.0" />
+		<PackageReference Include="Bilian.Ui.Maui" Version="1.13.0" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="13.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.20" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.1" />
@@ -73,6 +73,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Miscellaneous\MiscellaneousView.xaml.cs">
+	    <DependentUpon>MiscellaneousView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Modal dialog\ModalDialogView.xaml.cs">
 	    <DependentUpon>ModalDialogView.xaml</DependentUpon>
 	  </Compile>
@@ -83,6 +86,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Items view\ItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Miscellaneous\MiscellaneousView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
