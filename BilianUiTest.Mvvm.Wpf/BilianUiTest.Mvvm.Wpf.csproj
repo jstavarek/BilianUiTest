@@ -17,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bilian.Ui" Version="1.27.0" />
-    <PackageReference Include="Bilian.Ui.Wpf" Version="1.23.0" />
+    <PackageReference Include="Bilian.Ui" Version="1.27.1" />
+    <PackageReference Include="Bilian.Ui.Wpf" Version="1.23.1" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
-    <PackageReference Include="WPF-UI" Version="4.1.0" />
+    <PackageReference Include="WPF-UI" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>

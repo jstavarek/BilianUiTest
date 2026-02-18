@@ -37,10 +37,10 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Bilian.Ui" Version="1.27.0" />
-    <PackageReference Include="Bilian.Ui.WinUi" Version="1.2.1" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7175" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
+    <PackageReference Include="Bilian.Ui" Version="1.27.1" />
+    <PackageReference Include="Bilian.Ui.WinUi" Version="1.2.2" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilianUiTest.Mvvm\BilianUiTest.Mvvm.csproj" />
